@@ -33,5 +33,10 @@ public class Main {
         System.out.println(programmerBook1.toString());
 
         System.out.println(programmerBook1.equals(programmerBook2));
+
+        Book book3 = book1.clone();
+        System.out.println(book3.toString());
+        System.out.println(book3 == book1);
+        System.out.println(book3.equals(book1));
     }
 }

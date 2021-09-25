@@ -72,4 +72,13 @@ public class Book {
                 price + ", Edition: " + edition;
         return result;
     }
+
+    @Override
+    public Book clone(){
+        Book result = new Book();
+        result.setTitle(title);
+        result.setAuthor(author);
+        result.setPrice(price);
+        return result;
+    }
 }
