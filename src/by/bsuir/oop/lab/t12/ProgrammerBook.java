@@ -4,6 +4,12 @@ public class ProgrammerBook extends Book{
     private String language;
     private int level;
 
+    public ProgrammerBook(String title, String author, int price, int isbn, String language, int level){
+        super(title, author, price, isbn);
+        this.language = language;
+        this.level = level;
+    }
+
     public void setLanguage(String language){
         this.language = language;
     }

@@ -1,17 +1,32 @@
 package by.bsuir.oop.lab.t12;
 
-public class Book {
+public class Book implements Comparable<Book>{
     private String title;
     private String author;
     private int price;
+    private int isbn;
     private static int edition;
 
+    public Book(String title, String author, int price, int isbn){
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.isbn = isbn;
+    }
     public void setPrice(int price){
         this.price = price;
     }
 
     public int getPrice(){
         return price;
+    }
+
+    public void setIsbn(int isbn){
+        this.isbn = isbn;
+    }
+
+    public int getIsbn(){
+        return isbn;
     }
 
     public static void setEdition(int value){
@@ -75,10 +90,11 @@ public class Book {
 
     @Override
     public Book clone(){
-        Book result = new Book();
-        result.setTitle(title);
-        result.setAuthor(author);
-        result.setPrice(price);
-        return result;
+        return new Book(title, author, price, isbn);
+    }
+
+    @Override
+    public int compareTo(Book obj) {
+        return Integer.compare(isbn, ((Book) obj).getIsbn());
     }
 }
